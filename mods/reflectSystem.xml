@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mod name="Reflect System" version="0.1" author="Aluccard" contact="" enabled="yes">
+		<description>
+				Script que funciona para refletir danos para as creatures que o atacar.
+		</description>
+
+		<event type="login" name="regReflectDamage" event="script"><![CDATA[
+				function onLogin(cid)
+						registerCreatureEvent(cid,"ReflectDamage")
+						return true
+				end
+	]]></event>
+
+		<event type="statschange" name="ReflectDamage" event="script"><![CDATA[
+
+local slotPos = {CONST_SLOT_NECKLACE, CONST_SLOT_FEET, CONST_SLOT_RING}
+	
+function onStatsChange(cid, attacker, type, combat, value)
+		local reflectPercent = 0
+	local dmg = value
+	local playerPos = getCreaturePosition(cid)
+	local attackerPos = getCreaturePosition(attacker)
+
+	for i = 1, #slotPos do
+		if getPlayerSlotItem(cid, slotPos[i]).uid > 1 then
+			if getItemReflectPercent(getPlayerSlotItem(cid, slotPos[i]).uid) then
+				reflectPercent = reflectPercent + getItemReflectPercent(getPlayerSlotItem(cid, slotPos[i]).uid)
+			end
+		end
+	end
+		
+	if reflectPercent > 0 then
+		dmg = math.ceil(-value*((100-reflectPercent)/100))		
+		if (dmg < 0) then
+			doCreatureAddHealth(cid, dmg)	
+			doSendAnimatedText(playerPos, -dmg, COLOR_RED)
+			doSendMagicEffect(playerPos, 0)					
+		else
+			doSendMagicEffect(playerPos, 3)
+		end
+
+		dmg = math.ceil(-value*(reflectPercent/100))
+		if (dmg < 0) then
+			doCreatureAddHealth(attacker, dmg)
+			doSendAnimatedText(attackerPos, -dmg, COLOR_RED)
+			doSendDistanceShoot(playerPos, attackerPos, CONST_ANI_SMALLHOLY)
+		end
+	else
+		return true
+	end
+end]]></event>
+</mod>

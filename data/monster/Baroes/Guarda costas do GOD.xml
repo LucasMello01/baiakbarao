@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Guarda Costas Do GOD" nameDescription="Guarda Costas Do GOD" race="blood" experience="4000200" speed="400" manacost="0">
+  <health now="6000200" max="6000200"/>  
+  <!--<look type="367" body="78" feet="48" head="39"  legs="114"  addons="3" corpse="6080"/>-->
+  <look type="12" head="20" body="30" legs="114" feet="50" corpse="5527"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="1"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="0"/>    
+  </flags>
+    <attacks>
+	<attack name="melee" interval="1500" skill="250" attack="200"/>
+	<attack name="physical" interval="1500" chance="20" range="7" min="-2065" max="-3245">      
+    </attack>	
+    <attack name="speed" interval="2000" chance="18" target="1" range="7" radius="5" duration="5000" speedchange="-1850">
+		<attribute key="areaEffect" value="yellownote"/>
+	</attack>   	
+	<attack type="instant" name="hydro" interval="1500" chance="5" range="6" target="1"/>	
+	<attack type="instant" name="Groundshock" interval="1100" chance="5" range="6" target="1"/>
+	<attack type="instant" name="blizzard" interval="2500" chance="5" range="6" target="1"/>	
+	<attack type="instant" name="meteor" interval="1800" chance="5" range="6" target="1"/>	
+	<attack type="instant" name="meteoro" interval="1200" chance="5" range="6" target="1"/>
+  </attacks>
+<defenses armor="20" defense="20">
+<defense name="healing" interval="1000" chance="25" min="102" max="300">
+<attribute key="areaEffect" value="blueshimmer"/>
+</defense>
+<defense name="outfit" interval="1" chance="50" monster="ghazbaran" duration="6000">
+<attribute key="areaEffect" value="blueshimmer"/>
+</defense>
+<defense name="outfit" interval="1" chance="50" monster="Undead Morgaroth" duration="6000">
+<attribute key="areaEffect" value="blueshimmer"/>
+</defense>
+<defense name="outfit" interval="1" chance="50" monster="Swamp Morgaroth" duration="6000">
+<attribute key="areaEffect" value="blueshimmer"/>
+</defense>
+<defense name="outfit" interval="1" chance="50" monster="Morgaroth Girl" duration="6000">
+<attribute key="areaEffect" value="blueshimmer"/>
+</defense>
+</defenses>
+  <immunities>
+    <immunity physical="0"/>
+    <immunity energy="0"/>
+    <immunity fire="0"/>
+    <immunity poison="0"/>
+    <immunity lifedrain="0"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+  <voices interval="9000" chance="10">
+    <voice sentence="Já chegou o disco voador!"/>		
+  </voices>
+  <loot capacity="1000">
+<item id="2503" chance="1000"/> 
+<item id="2502" chance="1500"/> 
+<item id="2504" chance="2000"/> 
+<item id="8855" chance="2000"/>
+<item id="7423" chance="2000"/>
+<item id="7958" chance="1000"/> 
+<item id="3983" chance="1500"/> 
+<item id="3972" chance="1000"/>
+<item id="7890" chance="2000"/>
+<item id="1988" chance="2000">
+<inside>
+<item id="2160" countmax="3" chance="1000"/> 
+<item id="7414" chance="2000"/> 
+<item id="7735" chance="2000"/> 
+<item id="6571" chance="6571"/>
+</inside>
+</item>
+ </loot>
+</monster>
