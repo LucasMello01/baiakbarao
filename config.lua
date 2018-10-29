@@ -73,7 +73,7 @@
 
 	-- Connection config
 	worldId = 0
-	ip = "187.57.92.128"
+	ip = "158.69.12.112"
 	bindOnlyConfiguredIpAddress = false
 	loginPort = 7171
 	gamePort = 7172
@@ -88,7 +88,7 @@
 	onePlayerOnlinePerAccount = true
 	allowClones = false
 	serverName = "Baiak Barao"
-	loginMessage = "Quer Se Tornar o Mais FODA? entao compre Donote,Baiak Editado por DeathRocks"
+	loginMessage = "Quer Se Tornar o Mais FODA? entao compre Donate"
 	statusTimeout = 5 * 60 * 1000
 	replaceKickOnLogin = true
 	forceSlowConnectionsToDisconnect = false
@@ -96,11 +96,11 @@
 	premiumPlayerSkipWaitList = false
 
 	-- Database
-	sqlType = "sqlite"
+	sqlType = "mysql"
 	sqlHost = "localhost"
 	sqlPort = 3306
 	sqlUser = "root"
-	sqlPass = ""
+	sqlPass = "trocar123"
 	sqlDatabase = "theforgottenserver"
 	sqlFile = "Baiak.s3db"
 	sqlKeepAlive = 0
